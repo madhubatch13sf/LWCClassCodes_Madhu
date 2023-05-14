@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Imperative Calculator">
+        <div class="slds-var-m-around_medium">
+          <lightning-input label="Input 1"  onchange={firstHandler} value={a}></lightning-input>      
+          <lightning-input label="Input 2"  onchange={secondHandler} value={b}></lightning-input> 
+          <br/>
+          <template if:true={wireSum}>
+            <div>Wire Sum Result is {wireSum}</div>
+          </template> 
+
+          <div class="slds-align_absolute-center slds-var-m-top_small">
+            <lightning-button label="Add" variant="Brand"  onclick={calcHandler} name="Add"></lightning-button>
+            <lightning-button label="Sub" variant="Brand" class="slds-var-m-left_x-small"  onclick={calcHandler} name="Sub"></lightning-button>
+            <lightning-button label="Multiply" variant="Brand" class="slds-var-m-left_x-small"  onclick={calcHandler} name="Multiply"></lightning-button>
+            <lightning-button label="Divide" variant="Brand" class="slds-var-m-left_x-small"  onclick={calcHandler} name="Divide"></lightning-button>
+          </div>
+
+        <template lwc:if={imperativeResult}>
+            <div>Imperative Result is {imperativeResult}</div>
+        </template>
+       
+        </div>
+    </lightning-card>
+</template>
